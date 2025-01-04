@@ -53,12 +53,12 @@ jobs:
       run: npm install  # 使用npm安装项目依赖，若使用yarn，可改为yarn install
     - name: Build the project
       run: npm run build  # 假设项目中有定义build脚本用于构建项目，比如对于一些前端项目会进行代码压缩、打包等操作，根据实际项目的构建脚本调整
-    - name: Create artifact directory
-      run: mkdir -p artifacts
-    - name: Copy build files
-      run: cp -r * artifacts/  # 假设构建后的文件在build目录下，根据实际情况调整，这里将构建后的文件复制到artifacts目录
+    # - name: Create artifact directory
+    #   run: mkdir -p artifacts
+    # - name: Copy build files
+      # run: cp -r * artifacts/  # 假设构建后的文件在build目录下，根据实际情况调整，这里将构建后的文件复制到artifacts目录
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
         name: nodejs-project-artifacts
-        path: artifacts
+        path: .
