@@ -56,7 +56,7 @@ jobs:
     - name: Create artifact directory
       run: mkdir -p artifacts
     - name: Copy build files
-      run: cp -r build/* artifacts/  # 假设构建后的文件在build目录下，根据实际情况调整，这里将构建后的文件复制到artifacts目录
+      run: cp -r * artifacts/  # 假设构建后的文件在build目录下，根据实际情况调整，这里将构建后的文件复制到artifacts目录
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
