@@ -46,6 +46,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '16'  # 选择你期望的Node.js版本，这里以16为例
+    - name: chmod auth
+      run: |
+        chmod 777 node_modules/.bin/vue-cli-service
     - name: Install dependencies
       run: npm install  # 使用npm安装项目依赖，若使用yarn，可改为yarn install
     - name: Build the project
